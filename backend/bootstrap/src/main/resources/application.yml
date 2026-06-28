@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: devops-toolbox
+  profiles:
+    active: dev
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/devops_toolbox
+    username: devops
+    password: devops
+    driver-class-name: org.postgresql.Driver
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when_authorized
+
+app:
+  name: DevOps Toolbox
+  description: Modular monolith foundation for DevOps automation
+  version: 0.1.0-SNAPSHOT
+  artifact: devops-toolbox
+  environment: dev
+  build-time: unknown
+
+logging:
+  level:
+    root: INFO
+    com.forge.devopstoolbox: INFO

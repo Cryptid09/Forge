@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/devops_toolbox_test
+    username: devops
+    password: devops
+
+app:
+  environment: test
+
+logging:
+  level:
+    root: WARN
+    com.forge.devopstoolbox: INFO
