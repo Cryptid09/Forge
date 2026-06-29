@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://via.placeholder.com/150?text=Forge+Logo" alt="Forge Logo" width="150"/>
+  <img src="frontend/public/Forge-logo.png" alt="Forge Logo" width="150"/>
   <h1>Forge</h1>
   <p>A Local-First, Self-Hosted DevOps Workstation</p>
 
