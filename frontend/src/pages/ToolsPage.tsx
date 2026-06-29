@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Header } from '@/components/layout/Header'
+import { Loader } from '@/components/ui/Loader'
 import { api, type ToolDescriptor } from '@/lib/api'
 
 function ExecuteDialog({
@@ -42,21 +43,21 @@ function ExecuteDialog({
         <CardContent className="space-y-4">
           {tool.id === 'echo' ? (
             <label className="block space-y-1 text-sm">
-              <span className="text-[var(--color-muted-foreground)]">Message</span>
+              <span className="text-(--color-muted-foreground)">Message</span>
               <input
-                className="w-full rounded-md border border-[var(--color-border)] bg-transparent px-3 py-2"
+                className="w-full rounded-md border border-(--color-border) bg-transparent px-3 py-2"
                 value={message}
                 onChange={(event) => setMessage(event.target.value)}
               />
             </label>
           ) : (
             <label className="block space-y-1 text-sm">
-              <span className="text-[var(--color-muted-foreground)]">Duration (seconds)</span>
+              <span className="text-(--color-muted-foreground)">Duration (seconds)</span>
               <input
                 type="number"
                 min={0}
                 max={300}
-                className="w-full rounded-md border border-[var(--color-border)] bg-transparent px-3 py-2"
+                className="w-full rounded-md border border-(--color-border) bg-transparent px-3 py-2"
                 value={durationSeconds}
                 onChange={(event) => setDurationSeconds(event.target.value)}
               />
@@ -91,7 +92,7 @@ export function ToolsPage() {
       />
       <div className="grid gap-4 p-8 md:grid-cols-2">
         {toolsQuery.isLoading ? (
-          <p className="text-sm text-[var(--color-muted-foreground)]">Loading tools...</p>
+          <Loader label="Loading tools..." />
         ) : toolsQuery.isError ? (
           <p className="text-sm text-red-600">Failed to load tools.</p>
         ) : (
@@ -105,7 +106,7 @@ export function ToolsPage() {
                 <CardDescription>{tool.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex items-center justify-between">
-                <span className="text-xs text-[var(--color-muted-foreground)]">
+                <span className="text-xs text-(--color-muted-foreground)">
                   {tool.id} · v{tool.version}
                 </span>
                 <Button size="sm" onClick={() => setSelectedTool(tool)}>

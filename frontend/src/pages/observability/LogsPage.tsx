@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Play, Square, Download, Search } from 'lucide-react';
+import { FiFileText } from 'react-icons/fi';
 
 export const LogsPage: React.FC = () => {
     const [source, setSource] = useState('');
@@ -55,7 +56,7 @@ export const LogsPage: React.FC = () => {
     return (
         <div className="flex flex-col h-full p-6">
             <div className="flex justify-between items-center mb-6">
-                <h1 className="text-2xl font-bold text-gray-900">Live Log Streaming</h1>
+                <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2"><FiFileText className="text-indigo-600" /> <span>Live Log Streaming</span></h1>
                 <div className="flex space-x-4">
                     <input
                         type="text"

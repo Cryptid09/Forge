@@ -3,6 +3,7 @@ import { fetchImages, pullImage } from '../../api/dockerClient';
 import DockerLayout from '../DockerLayout';
 import { Download, Trash2 } from 'lucide-react';
 import { useState } from 'react';
+import { Loader } from '../../components/ui/Loader';
 
 export default function DockerImages() {
   const queryClient = useQueryClient();
@@ -21,7 +22,7 @@ export default function DockerImages() {
     onError: () => alert('Failed to pull image')
   });
 
-  if (isLoading) return <DockerLayout>Loading images...</DockerLayout>;
+  if (isLoading) return <DockerLayout><Loader label="Loading images..." /></DockerLayout>;
 
   return (
     <DockerLayout>

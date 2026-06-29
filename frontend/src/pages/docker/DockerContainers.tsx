@@ -3,6 +3,7 @@ import { fetchContainers, startContainer, stopContainer, restartContainer, remov
 import DockerLayout from '../DockerLayout';
 import { Play, Square, RotateCw, Trash2, Terminal } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Loader } from '../../components/ui/Loader';
 
 export default function DockerContainers() {
   const queryClient = useQueryClient();
@@ -15,7 +16,7 @@ export default function DockerContainers() {
   const restartMut = useMutation({ mutationFn: restartContainer, onSuccess: invalidate });
   const removeMut = useMutation({ mutationFn: removeContainer, onSuccess: invalidate });
 
-  if (isLoading) return <DockerLayout>Loading containers...</DockerLayout>;
+  if (isLoading) return <DockerLayout><Loader label="Loading containers..." /></DockerLayout>;
 
   return (
     <DockerLayout>
@@ -37,7 +38,7 @@ export default function DockerContainers() {
               return (
                 <tr key={c.Id}>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{name}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 truncate max-w-[200px]" title={c.Image}>{c.Image}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 truncate max-w-50" title={c.Image}>{c.Image}</td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
                       ${isRunning ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>

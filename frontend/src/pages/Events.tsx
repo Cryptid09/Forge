@@ -3,6 +3,7 @@ import { fetchEvents } from '../api/apiClient';
 import { useWebSocket } from '../hooks/useWebSocket';
 import { useEffect, useState } from 'react';
 import { Event } from '../api/apiClient';
+import { Loader } from '../components/ui/Loader';
 
 export default function Events() {
   const { data: initialEvents = [], isLoading } = useQuery({ queryKey: ['events'], queryFn: fetchEvents });
@@ -21,7 +22,7 @@ export default function Events() {
     setAllEvents(combined);
   }, [initialEvents, liveEvents]);
 
-  if (isLoading) return <div>Loading events...</div>;
+  if (isLoading) return <Loader label="Loading events..." />;
 
   return (
     <div className="space-y-6">
@@ -40,7 +41,7 @@ export default function Events() {
         <div className="relative border-l-2 border-gray-200 ml-3 space-y-8">
           {allEvents.map(event => (
             <div key={event.id} className="relative pl-6">
-              <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-1.5 border-2 border-white"></div>
+              <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-1.75 top-1.5 border-2 border-white"></div>
               <div>
                 <p className="text-sm font-semibold text-gray-900">{event.eventType}</p>
                 <p className="text-xs text-gray-500 mt-1">{new Date(event.timestamp).toLocaleString()} - Job: {event.jobId.substring(0, 8)}...</p>

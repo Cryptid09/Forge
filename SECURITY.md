@@ -12,7 +12,7 @@ Currently, only the `main` branch (unreleased latest) is supported for security 
 
 If you discover a security vulnerability in Forge, please do **NOT** open a public issue.
 
-Instead, please send an email to `security@forge-org.com` (placeholder) with the details. 
+Instead, please send an email to `security@Cryptid09.com` (placeholder) with the details.
 We will respond within 48 hours to acknowledge the report and outline the next steps for resolution.
 
 ### Disclosure Process

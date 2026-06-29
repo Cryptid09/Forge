@@ -5,7 +5,7 @@ First off, thank you for considering contributing to Forge! It's people like you
 ## Development Setup
 
 1. **Prerequisites**: Ensure you have Java 21+, Node.js 22+, and Docker installed.
-2. **Clone the repository**: `git clone https://github.com/forge-org/forge.git`
+2. **Clone the repository**: `git clone https://github.com/Cryptid09/Forge.git`
 3. **Start backend services**: We use Docker Compose for backing services (PostgreSQL, Kafka). Run `docker compose up -d postgres kafka`.
 4. **Run Backend**: `cd backend && ./gradlew :bootstrap:bootRun`
 5. **Run Frontend**: `cd frontend && npm install && npm run dev`

@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import apiClient from '../../api/apiClient';
 import { Database, Server } from 'lucide-react';
+import { SiApachekafka } from 'react-icons/si';
 
 export const KafkaPage: React.FC = () => {
     const { data: topics } = useQuery({
@@ -15,15 +16,17 @@ export const KafkaPage: React.FC = () => {
     });
 
     return (
-        <div className="flex flex-col h-full space-y-6">
-            <div className="flex justify-between items-center">
-                <h1 className="text-2xl font-bold text-gray-900 flex items-center space-x-2">
-                    <Database className="text-indigo-600" />
-                    <span>Kafka Event Streaming</span>
-                </h1>
-                <a href="http://localhost:8081" target="_blank" rel="noreferrer" className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded text-sm font-medium">
-                    Open Kafka UI
-                </a>
+        <div className="flex h-full flex-col space-y-6">
+            <div className="rounded-2xl border border-slate-200 bg-linear-to-r from-purple-50 via-indigo-50 to-white p-6 shadow-sm">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                    <h1 className="flex items-center space-x-3 text-2xl font-bold text-slate-900">
+                        <SiApachekafka className="h-8 w-8 text-[#231F20]" />
+                        <span>Kafka Event Streaming</span>
+                    </h1>
+                    <a href="http://localhost:8081" target="_blank" rel="noreferrer" className="inline-flex items-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-indigo-700">
+                        Open Kafka UI
+                    </a>
+                </div>
             </div>
 
             <div className="grid grid-cols-2 gap-6">
