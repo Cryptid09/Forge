@@ -10,8 +10,6 @@
     <img src="https://img.shields.io/badge/PostgreSQL-16-blue.svg" alt="PostgreSQL">
     <img src="https://img.shields.io/badge/Docker-Supported-blue.svg" alt="Docker">
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
-    <img src="https://img.shields.io/github/stars/Cryptid09/Forge.svg?style=social" alt="GitHub stars">
-  </p>
 </div>
 
 ---
